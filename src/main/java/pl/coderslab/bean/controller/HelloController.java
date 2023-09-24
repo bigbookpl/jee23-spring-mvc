@@ -16,6 +16,6 @@ public class HelloController {
   @GetMapping("/jajko")
   @ResponseBody
   public String marchew() {
-    return "Marchewka";
+    return "Marchewka 2";
   }
 }
