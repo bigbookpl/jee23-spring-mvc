@@ -37,4 +37,9 @@ public class HelloController {
     return "Witaj " + firstName + " " + lastName;
   }
 
+  @RequestMapping("/helloView")
+  public String helloView(){
+    return "home";
+  }
+
 }
