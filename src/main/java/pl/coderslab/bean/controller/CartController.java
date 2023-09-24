@@ -38,8 +38,11 @@ public class CartController {
   public String cart(Model model) {
     List<CartItem> cartItems = cart.getCartItems();
     return cartItems.stream()
-             .map(cartItem -> String.format("%s - %d szt.", cartItem.getProduct()
-                                                               .getName(), cartItem.getQuantity()))
+             .map(cartItem -> {
+               String name = cartItem.getProduct().getName();
+               int quantity = cartItem.getQuantity();
+               return String.format("%s - %d szt.", name, quantity);
+             })
              .collect(Collectors.joining("; "));
   }
 }
